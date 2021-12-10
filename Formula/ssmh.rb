@@ -5,21 +5,21 @@
 class Ssmh < Formula
   desc "Show the history of connections to Amazon EC2 instances using AWS Session Manager"
   homepage "https://github.com/michimani/ssmh"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/michimani/ssmh/releases/download/v0.1.0/ssmh_0.1.0_darwin_x86_64.tar.gz"
-      sha256 "64ee962a03f177a22dbbb0ef64f0977a96882bf38a01e58bc25e994416508297"
+    if Hardware::CPU.arm?
+      url "https://github.com/michimani/ssmh/releases/download/v0.1.1/ssmh_0.1.1_darwin_arm64.tar.gz"
+      sha256 "6fd4fbce247eee0bd898789b5c65a467701404306a12981be35ce7332cba0a44"
 
       def install
         bin.install "ssmh"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/michimani/ssmh/releases/download/v0.1.0/ssmh_0.1.0_darwin_arm64.tar.gz"
-      sha256 "8784016f546a9d1de873f0b842d0dbacb9b012108c8bfec92d8957673323df00"
+    if Hardware::CPU.intel?
+      url "https://github.com/michimani/ssmh/releases/download/v0.1.1/ssmh_0.1.1_darwin_x86_64.tar.gz"
+      sha256 "11e73ed5bf1b706bba185bb5042418ac556184706bc654b84259a95e47d49e85"
 
       def install
         bin.install "ssmh"
@@ -29,16 +29,16 @@ class Ssmh < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/michimani/ssmh/releases/download/v0.1.0/ssmh_0.1.0_linux_x86_64.tar.gz"
-      sha256 "9244232dbf0a73829808ff409be850ee544ac9aa6ba17d1fbe3d89734c037717"
+      url "https://github.com/michimani/ssmh/releases/download/v0.1.1/ssmh_0.1.1_linux_x86_64.tar.gz"
+      sha256 "c8b9b497a9961852edf9b7df2392e44683f82590d709e463bee7d2e4f49f069a"
 
       def install
         bin.install "ssmh"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/michimani/ssmh/releases/download/v0.1.0/ssmh_0.1.0_linux_arm64.tar.gz"
-      sha256 "5bf3e86bdf045e011f959e3f01b3f69e41670e4db5036009d30e38474637427e"
+      url "https://github.com/michimani/ssmh/releases/download/v0.1.1/ssmh_0.1.1_linux_arm64.tar.gz"
+      sha256 "80fd6d9dae1ba88d2b1a4c25b0e4db3d2604bad2a3ec731f0f37391c4f310d8c"
 
       def install
         bin.install "ssmh"
